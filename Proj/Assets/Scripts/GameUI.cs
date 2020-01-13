@@ -10,11 +10,7 @@ namespace RubikCube
     
     public class GameUI : MonoBehaviour
     {
-        public enum Message
-        {
-            Undo,
-        }
-    
+        
         [SerializeField] private Button undoButton;
 
         public IObservable<Unit> OnClickUndoAsObservable => undoButton.OnClickAsObservable();
