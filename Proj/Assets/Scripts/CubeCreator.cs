@@ -18,12 +18,15 @@ namespace RubikCube
             var startY = -dimensions * 0.5f + 0.5f;
             var startX = -dimensions * 0.5f + 0.5f;
 
-            var id    = 0;
+            var id = 0;
             var cubes = new List<RotateCube>();
 
-            for (var z = 0; z < dimensions; z++) {
-                for (var y = 0; y < dimensions; y++) {
-                    for (var x = 0; x < dimensions; x++) {
+            for (var z = 0; z < dimensions; z++)
+            {
+                for (var y = 0; y < dimensions; y++)
+                {
+                    for (var x = 0; x < dimensions; x++)
+                    {
                         var isOuter = (x == 0 || y == 0 || z == 0
                             || x == dimensions - 1 || y == dimensions - 1 || z == dimensions - 1);
 
@@ -36,7 +39,7 @@ namespace RubikCube
                         cube.transform.position = new Vector3(posX, posY, posZ);
 
                         cube.PositionId = new Vector3Int(x, y, z);
-                        cube.Id         = id;
+                        cube.Id = id;
                         cubes.Add(cube);
 
                         id++;

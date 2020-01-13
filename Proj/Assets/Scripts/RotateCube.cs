@@ -20,7 +20,7 @@ namespace RubikCube
 
         private Transform _transform;
 
-        private void Start()
+        private void Awake()
         {
             _transform = transform;
         }
@@ -33,7 +33,6 @@ namespace RubikCube
             // not change
             if (angle == Vector3Int.zero)
             {
-                //                Debug.Log("nothing to change");
                 return PositionId;
             }
 
