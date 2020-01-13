@@ -1,1 +1,1 @@
-# MagicCube
+# RubikCube
