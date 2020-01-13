@@ -32,43 +32,46 @@ namespace RubikCube
         /// make this true for unity remote 
         public static bool IsUnityRemote = false;
         
-        public enum DimensionType
-        {
-            Two,
-            Three,
-            Four,
-            Five,
-            Six,
-        }
+        // public enum DimensionType
+        // {
+        //     Two,
+        //     Three,
+        //     Four,
+        //     Five,
+        //     Six,
+        // }
         
-        public DimensionType Dimension { get; set; }
-        
-        public int ScrambleTimes { get; set; }
+        // public DimensionType Dimension { get; set; }
+
+        public static int ScrambleTimes = 10;
 
         public bool StartBySaveData { get; set; }
         
-        public int DimensionToInt(DimensionType dimensionType)
-        {
-            var dimension = 0;
-            switch (dimensionType) {
-                case DimensionType.Two:
-                    dimension = 2;
-                    break;
-                case DimensionType.Three:
-                    dimension = 3;
-                    break;
-                case DimensionType.Four:
-                    dimension = 4;
-                    break;
-                case DimensionType.Five:
-                    dimension = 5;
-                    break;
-                case DimensionType.Six:
-                    dimension = 6;
-                    break;
-            }
-            return dimension;
-        }
+        // public int DimensionToInt(DimensionType dimensionType)
+        // {
+        //     var dimension = 0;
+        //     switch (dimensionType) {
+        //         case DimensionType.Two:
+        //             dimension = 2;
+        //             break;
+        //         case DimensionType.Three:
+        //             dimension = 3;
+        //             break;
+        //         case DimensionType.Four:
+        //             dimension = 4;
+        //             break;
+        //         case DimensionType.Five:
+        //             dimension = 5;
+        //             break;
+        //         case DimensionType.Six:
+        //             dimension = 6;
+        //             break;
+        //     }
+        //     return dimension;
+        // }
+
+
+        public static int Dimension = 3;
 
         private void Start()
         {
