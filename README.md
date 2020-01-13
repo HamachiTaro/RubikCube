@@ -10,6 +10,6 @@ https://github.com/neuecc/UniRx/blob/master/LICENSE
 
 ## UniTask
 
-Copyright (c) 2018 Yoshifumi Kawai
+Copyright (c) 2019 Yoshifumi Kawai / Cysharp, Inc.
 
-https://github.com/neuecc/UniRx/blob/master/LICENSE
+https://github.com/Cysharp/UniTask/blob/master/LICENSE
