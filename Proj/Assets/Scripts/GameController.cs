@@ -28,7 +28,7 @@ namespace RubikCube
             Retry,
         }
 
-        // [SerializeField] private GameUI gameUI;
+        [SerializeField] private GameUI gameUI;
 
         [SerializeField] private CubeCreator cubeCreator;
 
@@ -175,6 +175,15 @@ namespace RubikCube
 
             // --- UI events ---
 
+            gameUI.OnClickUndoAsObservable
+                .SelectMany(_ => cubeController.Undo().ToObservable())
+                .Subscribe(success => {
+                    if (success) Debug.Log("did undo");
+                    else Debug.Log("did not undo");
+                })
+                .AddTo(_stateDisposable);
+            
+            
             /*
             gameUI.MessageAsObservable
                 .Where(message => message == GameUI.Message.Pause)
@@ -194,16 +203,7 @@ namespace RubikCube
                 })
                 .AddTo(_stateDisposable);
 
-            gameUI.MessageAsObservable
-                .Where(message => message == GameUI.Message.Undo)
-//                .Do(_ => Debug.Log("receive message of Undo."))
-                .SelectMany(_ => cubeController.Undo().ToObservable())
-                .Subscribe(success => {
-                    // TODO sound.
-//                    if (success) Debug.Log("did undo");
-//                    else Debug.Log("did not undo");
-                })
-                .AddTo(_stateDisposable);
+
 
             gameUI.MessageAsObservable
                 .Where(message => message == GameUI.Message.Retry)
